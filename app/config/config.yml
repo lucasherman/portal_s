@@ -75,7 +75,7 @@ fos_user:
     service:
             user_manager: pugx_user_manager
 
-pugs_multi_user:
+pugx_multi_user:
     users:
         partner:
             entity:
@@ -85,23 +85,23 @@ pugs_multi_user:
                   type: AppBundle\Form\Type\RegistrationPartnerFormType
                   name: fos_user_registration_form
                   validation_groups:  [Registration, Default]
-                  template: AcmeUserBundle:Registration:partner.form.html.twig
+                template: AppBundle:Registration:partner.form.html.twig
             profile:
                 form:
-                type: AppBundle\Form\Type\ProfilePartnerFormType
-                name: fos_user_profile_form
-                validation_groups:  [Profile, Default]
+                  type: AppBundle\Form\Type\ProfilePartnerFormType
+                  name: fos_user_profile_form
+                  validation_groups:  [Profile, Default]
         partner:
             entity:
               class: AppBundle\Entity\Customer
             registration:
                 form:
-                type: AppBundle\Form\Type\RegistrationCustomerFormType
-                name: fos_user_registration_form
-                validation_groups:  [Registration, Default]
-                template: AcmeUserBundle:Registration:customer.form.html.twig
+                  type: AppBundle\Form\Type\RegistrationCustomerFormType
+                  name: fos_user_registration_form
+                  validation_groups:  [Registration, Default]
+                template: App Bundle:Registration:customer.form.html.twig
             profile:
                 form:
-                type: AppBundle\Form\Type\ProfileCustomerFormType
-                name: fos_user_profile_form
-                validation_groups:  [Profile, Default]
+                  type: AppBundle\Form\Type\ProfileCustomerFormType
+                  name: fos_user_profile_form
+                  validation_groups:  [Profile, Default]
