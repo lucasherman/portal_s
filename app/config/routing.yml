@@ -4,3 +4,12 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+partner_registration:
+    pattern: /register/partner
+    defaults: { _controller: AppBundle:RegistrationPartner:register }
+
+customer_registration:
+    pattern: /register/customer
+    defaults: { _controller: AppBundle:RegistrationCustomer:register }
+

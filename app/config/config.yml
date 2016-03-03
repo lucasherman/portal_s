@@ -72,3 +72,36 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: AppBundle\Entity\User
+    service:
+            user_manager: pugx_user_manager
+
+pugs_multi_user:
+    users:
+        partner:
+            entity:
+              class: AppBundle\Entity\Partner
+            registration:
+                form:
+                  type: AppBundle\Form\Type\RegistrationPartnerFormType
+                  name: fos_user_registration_form
+                  validation_groups:  [Registration, Default]
+                  template: AcmeUserBundle:Registration:partner.form.html.twig
+            profile:
+                form:
+                type: AppBundle\Form\Type\ProfilePartnerFormType
+                name: fos_user_profile_form
+                validation_groups:  [Profile, Default]
+        partner:
+            entity:
+              class: AppBundle\Entity\Customer
+            registration:
+                form:
+                type: AppBundle\Form\Type\RegistrationCustomerFormType
+                name: fos_user_registration_form
+                validation_groups:  [Registration, Default]
+                template: AcmeUserBundle:Registration:customer.form.html.twig
+            profile:
+                form:
+                type: AppBundle\Form\Type\ProfileCustomerFormType
+                name: fos_user_profile_form
+                validation_groups:  [Profile, Default]
